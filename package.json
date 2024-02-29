@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@portkey/contracts": "^1.5.3",
-    "@portkey/detect-provider": "^1.1.1-alpha.1",
-    "@portkey/utils": "^1.5.3",
+    "@portkey/contracts": "^2.0.0",
+    "@portkey/detect-provider": "2.1.0-alpha.1",
+    "@portkey/utils": "^2.0.0",
     "aelf-sdk": "^3.2.45-beta.0",
     "bn.js": "4.12.0",
     "echarts": "^5.4.3",

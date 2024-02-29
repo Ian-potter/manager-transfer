@@ -13,9 +13,8 @@ import {
   ProviderErrorType,
 } from "@portkey/provider-types";
 import { IContract } from "@portkey/types";
-import detectProvider from "@portkey/detect-provider";
+import detectProvider, { TProviderName } from "@portkey/detect-provider";
 import { useExampleState, Actions, State } from "@/hooks/hooks";
-import { getRawByPortkey } from "@/utils/getRawByPortkey";
 import { getTxResult } from "@portkey/contracts";
 import { getRawByEOA } from "@/utils/getRawByEOA";
 import { sleep } from "@portkey/utils";
@@ -28,7 +27,11 @@ const TokenContractAddressMap = {
   tDVW: "ASh2Wt7nSEmYqnGxPPzp4pnVDU4uhj1XW9Se5VeZcX2UDdyjx",
 };
 
-export default function TransferManager() {
+export default function TransferManager({
+  providerName,
+}: {
+  providerName?: TProviderName;
+}) {
   const [provider, setProvider] = useState<IPortkeyProvider>();
 
   const [state, dispatch] = useExampleState();
@@ -51,7 +54,7 @@ export default function TransferManager() {
 
   const initProvider = useCallback(async () => {
     try {
-      const provider = await detectProvider();
+      const provider = await detectProvider({ providerName });
       provider && setProvider(provider);
       return provider;
     } catch (error) {
@@ -319,6 +322,17 @@ export default function TransferManager() {
                 </label>
                 <button type="submit">GetBalance</button>
               </form>
+              <div style={{ color: "red" }}>
+                {state.balance ? (
+                  <>
+                    <div>-------</div>
+                    {"Balance:" + "   " + JSON.stringify(state.balance)}
+                    <div>-------</div>
+                  </>
+                ) : (
+                  ""
+                )}
+              </div>
               <div style={{ margin: "20px 0" }}>
                 Same chain transfer, no cross chain transfer
                 ----------------------------------------------
