@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 const baseOG = {
   description: "A Twitter for My manager transfer",
   title: "Manager Transfer",
-  images: "https://manager-transfer.vercel.app/portkey.jpg",
+  images: "https://github.com/Portkey-Wallet/portkey-web/blob/master/logo.png?raw=true",
 };
 
 export const metadata: Metadata = {
