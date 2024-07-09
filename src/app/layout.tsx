@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 const baseOG = {
   description: "A Twitter for My manager transfer",
   title: "Manager Transfer",
-  images: "https://etherscan.io/images/brandassets/og.jpg",
+  images: "https://manager-transfer.vercel.app/portkey.jpg",
 };
 
 export const metadata: Metadata = {
