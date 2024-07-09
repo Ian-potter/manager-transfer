@@ -1,0 +1,32 @@
+html,
+body,
+main {
+  background-color: #fff !important;
+  margin: 0;
+}
+h2,
+canvas {
+  color: black;
+  background-color: #fff !important;
+  text-align: center;
+}
+
+.detail {
+  display: flex;
+  gap: 10;
+}
+.detail div {
+  flex: 1;
+}
+
+#main,
+#depth-map {
+  height: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .detail {
+    display: block;
+    gap: 0;
+  }
+}
